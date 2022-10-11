@@ -3,22 +3,20 @@ from typing import List
 
 def find_duplicate(nums: List[int]) -> int:
     """Faça o código aqui."""
-    length = len(nums)
-    if length == 1 or length == 0 or nums is None:
-        return False
-
-    index = 0
-    nums.sort()
-
-    [1, 3, 4, 5, 1]
     try:
+        if len(nums) <= 1:
+            return False
+
+        nums.sort()
+        index = 0
+
         for num in nums:
             index += 1
-            if isinstance(num, str) or num < 0:
+            if num < 0:
                 return False
             if num == nums[index]:
-                    return num
-    except IndexError:
+                return num
+    except (IndexError, TypeError):
         return False
 
     # Version one
