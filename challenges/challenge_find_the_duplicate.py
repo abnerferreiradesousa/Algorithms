@@ -1,4 +1,3 @@
-from timeit import repeat
 from typing import List
 
 
@@ -6,8 +5,8 @@ def find_duplicate(nums: List[int]) -> int:
     """Faça o código aqui."""
 
     # Case one
-        # nums = [3, 1, 3, 4, 2]
-        # saída: 3
+    # nums = [3, 1, 3, 4, 2]
+    # saída: 3
 
     if len(nums) < 1:
         return False
