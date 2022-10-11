@@ -1,21 +1,33 @@
 from typing import List
 
 
+def validate(nums):
+    if len(nums) <= 1:
+        return False
+
+    for num in nums:
+        if num < 0:
+            return False
+    return True
+
+
+def helper(nums):
+    index = 0
+    for num in nums:
+        index += 1
+        if num == nums[index]:
+            return num
+
+
 def find_duplicate(nums: List[int]) -> int:
     """Faça o código aqui."""
     try:
-        if len(nums) <= 1:
-            return False
-
         nums.sort()
-        index = 0
-
-        for num in nums:
-            index += 1
-            if num < 0:
-                return False
-            if num == nums[index]:
-                return num
+        result = validate(nums)
+        if result:
+            res = helper(nums)
+            return res
+        return False
     except (IndexError, TypeError):
         return False
 
